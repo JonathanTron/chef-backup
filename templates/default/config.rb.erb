@@ -1,0 +1,51 @@
+# encoding: utf-8
+
+##
+# Backup
+# Generated Main Config Template
+#
+# For more information:
+#
+# View the Git repository at https://github.com/meskyanichi/backup
+# View the Wiki/Documentation at https://github.com/meskyanichi/backup/wiki
+# View the issue log at https://github.com/meskyanichi/backup/issues
+
+# Logger configuration
+Backup.logger.configure do
+  console.quiet = <%= @logging_console_quiet %>
+  <% if @logging_logfile_enabled -%>
+  logfile.enabled = <%= @logging_logfile_enabled %>
+  logfile.log_path = "<%= @logging_logfile_log_path %>"
+  logfile.max_bytes = <%= @logging_logfile_max_bytes %>
+  <% end %>
+  <% if @logging_syslog_enabled -%>
+  syslog.enabled = <%= @logging_syslog_enabled %>
+  syslog.ident = <%= @logging_syslog_ident %>
+  syslog.options = <%= @logging_syslog_options %>
+  syslog.facility = <%= @logging_syslog_facility %>
+  syslog.info = <%= @logging_syslog_info %>
+  syslog.warn = <%= @logging_syslog_warn %>
+  syslog.error = <%= @logging_syslog_error %>
+  <% end -%>
+end
+
+# Utilities configuration
+Backup.utilities.configure do
+  <% @utilities.each do |k,v| -%>
+  <%= k %> = "<%= v %>"
+  <% end -%>
+end
+
+<% @encryptor_defaults.each do |kind, options| -%>
+Backup::Encryptor::<%= kind %>.defaults do |encryption|
+  <% options.each do |k,v| -%>
+  encryption.<%= k %> = <%= v.inspect %>
+  <% end -%>
+end
+<% end -%>
+
+##
+# Load all models from the models directory (after the above global configuration blocks)
+Dir[File.join(File.dirname(Config.config_file), "models", "*.rb")].each do |model|
+  instance_eval(File.read(model))
+end
