@@ -74,10 +74,16 @@ Attributes parameters:
 
 * `name` - String - name to use in backup model - default to resource name
 * `description` - String - description to use in backup model - default to `nil`
+* `hour` - String - cron task hour's parameter - default to "1"
+* `minute` - String - cron task minute's parameter - default to "*"
+* `day` - String - cron task day's parameter - default to "*"
+* `month` - String - cron task month's parameter - default to "*"
+* `weekday` - String - cron task weekday's parameter - default to "*"
+* `mailto` - String - cron task mailto's parameter - default to nil
 * `split_into_chunks_of` - Integer - specify value for `split_into_chunks_of` in `MB`
   set to nil to disable or an `Integer` (eg: `250`) to enable - default to `nil`
 * `archives` - Hash - hash of archives sections to generate, (eg:
-  `ruby[{"etc_files" => {use_sudo: true, add: ["/etc"], exclude: ["/etc/passwd"]}}`)
+  `{"etc_files" => {use_sudo: true, add: ["/etc"], exclude: ["/etc/passwd"]}}`)
   see [Backup Archives wiki](https://github.com/meskyanichi/backup/wiki/Archives)
   for more information - default to `{}`
 * `databases` - Array - list of databases sections to generate (eg:
@@ -85,18 +91,18 @@ Attributes parameters:
   see [Backup Databases wiki](https://github.com/meskyanichi/backup/wiki/Databases)
   for more information - default to `[]`
 * `compress_with` - Hash - configure compressor to use, set to nil to disable it (eg:
-  `{kind: "Bzip2", level: 9}`). See [Backup Compressors wiki](https://github.com/meskyanichi/backup/wiki/Compressors)
+  `{kind: "Bzip2", options: {level: 9}}`). See [Backup Compressors wiki](https://github.com/meskyanichi/backup/wiki/Compressors)
   for more information. - default to `{kind: "Gzip"}`
 * `encrypt_with` - Hash - configure encryptor to use, set to nil to disable it (eg:
-  `{kind: "OpenSSL", password: "xxxXXX", base64: true, salt: true}`). See
+  `{kind: "OpenSSL", options: {password: "xxxXXX", base64: true, salt: true}}`). See
   [Backup Encryptors wiki](https://github.com/meskyanichi/backup/wiki/Encryptors)
   for more information. - default to `nil`
 * `store_with` - Array - List of storage sections to generate (eg:
-  `[{kind: "S3", access_key_id: "my_key", "secret_access_key": "secret_key", region: "us-east-1", bucket: "my_bucket", keep: 30}]`).
+  `[{kind: "S3", options: {access_key_id: "my_key", "secret_access_key": "secret_key", region: "us-east-1", bucket: "my_bucket", keep: 30}}]`).
   See [Backup Storages wiki](https://github.com/meskyanichi/backup/wiki/Storages)
   for more information. - default to `[]`
 * `notify_by` - Array - List of notification section to generate (eg:
-  `[{kind: "Mail", "on_success": false, from: "me@example.com", to: "me@example.com"}]`).
+  `[{kind: "Mail", options: {"on_success": false, from: "me@example.com", to: "me@example.com"}}]`).
   See [Backup Notifiers wiki](https://github.com/meskyanichi/backup/wiki/Notifiers)
   for more information. - default to `[]`
 
