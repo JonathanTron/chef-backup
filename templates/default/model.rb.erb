@@ -60,7 +60,7 @@ Backup::Model.new(<%= @name.to_sym.inspect %><% if @description %>, <%= @descrip
   notify_by <%= notify[:kind] %> do |notification|
     <% notification[:options].each do |key, value| -%>
     notification.<%= key %> = <%= value.inspect %>
-    <% end if notification[:options] -%>
+    <% end if notify[:options] -%>
   end
   <% end -%>
 end
