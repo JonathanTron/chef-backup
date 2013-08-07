@@ -57,6 +57,14 @@ Backup::Storage::<%= kind %>.defaults do |storage|
 end
 <% end -%>
 
+<% @notifier_defaults.each do |kind, options| -%>
+Backup::Notifier::<%= kind %>.defaults do |notifier|
+  <% options.each do |k,v| -%>
+  notifier.<%= k %> = <%= v.inspect %>
+  <% end -%>
+end
+<% end -%>
+
 ##
 # Load all models from the models directory (after the above global configuration blocks)
 Dir[File.join(File.dirname(Config.config_file), "models", "*.rb")].each do |model|

@@ -21,3 +21,4 @@ attribute :logging_syslog_warn, kind_of: String, default: "Syslog::LOG_WARNING"
 attribute :logging_syslog_error, kind_of: String, default: "Syslog::LOG_ERR"
 attribute :encryptor_defaults, kind_of: Hash, default: {}
 attribute :storage_defaults, kind_of: Hash, default: {}
+attribute :notifier_defaults, kind_of: Hash, default: {}

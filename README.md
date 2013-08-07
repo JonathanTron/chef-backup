@@ -61,6 +61,9 @@ Attributes parameters:
 * `storage_defaults` - Hash - configure storage defaults (eg: `{"S3": {}}`).
   see [Backup Storages wiki](https://github.com/meskyanichi/backup/wiki/Storages#default-configuration)
   for more information. - default to `{}`
+* `notifier_defaults` - Hash - configure notifier defaults (eg: `{"Mail": {}}`).
+  see [Backup Notifiers wiki](https://github.com/meskyanichi/backup/wiki/Notifiers#default-configuration)
+  for more information. - default to `{}`
 
 #### backup_model
 
