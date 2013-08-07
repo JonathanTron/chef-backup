@@ -56,7 +56,10 @@ Attributes parameters:
 * `utilities` - Hash - configure `Backup::Utilities` option -
   default to `{gpg: "/opt/omnibus-backup/embedded/bin/gpg2", openssl: "/opt/omnibus-backup/embedded/bin/openssl"}`
 * `encryptor_defaults` - Hash - configure encryptor defaults (eg: `{"OpenSSL": {}}`).
-  see [Backup Encryptors wiki](https://github.com/meskyanichi/backup/wiki/Encryptors)
+  see [Backup Encryptors wiki](https://github.com/meskyanichi/backup/wiki/Encryptors#default-configuration)
+  for more information. - default to `{}`
+* `storage_defaults` - Hash - configure storage defaults (eg: `{"S3": {}}`).
+  see [Backup Storages wiki](https://github.com/meskyanichi/backup/wiki/Storages#default-configuration)
   for more information. - default to `{}`
 
 #### backup_model

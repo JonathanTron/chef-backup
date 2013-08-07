@@ -37,7 +37,7 @@ end
 # Utilities configuration
 Backup::Utilities.configure do
   <% @utilities.each do |k,v| -%>
-  <%= k %> = "<%= v %>"
+  <%= k %> = <%= v.inspect %>
   <% end -%>
 end
 
@@ -45,6 +45,14 @@ end
 Backup::Encryptor::<%= kind %>.defaults do |encryption|
   <% options.each do |k,v| -%>
   encryption.<%= k %> = <%= v.inspect %>
+  <% end -%>
+end
+<% end -%>
+
+<% @storage_defaults.each do |kind, options| -%>
+Backup::Storage::<%= kind %>.defaults do |storage|
+  <% options.each do |k,v| -%>
+  storage.<%= k %> = <%= v.inspect %>
   <% end -%>
 end
 <% end -%>

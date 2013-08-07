@@ -27,6 +27,7 @@ action :install do
       logging_syslog_warn: new_resource.logging_syslog_warn,
       logging_syslog_error: new_resource.logging_syslog_error,
       encryptor_defaults: new_resource.encryptor_defaults,
+      storage_defaults: new_resource.storage_defaults,
     })
   end
 end
