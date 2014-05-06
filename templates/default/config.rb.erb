@@ -37,7 +37,7 @@ end
 # Utilities configuration
 Backup::Utilities.configure do
   <% @utilities.each do |k,v| -%>
-  <%= k %> = <%= v.inspect %>
+  <%= k %> <%= v.inspect %>
   <% end -%>
 end
 
