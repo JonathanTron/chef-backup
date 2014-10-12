@@ -11,8 +11,10 @@ action :install do
     checksum new_resource.checksum
   end
 
-  dpkg_package "omnibus-backup" do
+  package "omnibus-backup" do
     source pkg_path
+    provider Chef::Provider::Package::Dpkg
+    action :install
   end
 end
 

@@ -1,21 +1,19 @@
-{
-  "sources": {
-    "backup": {
-      "path": "."
-    },
-    "backup-test": {
-      "path": "./test/integration/cookbooks/backup-test"
-    },
-    "chef-solo-search": {
-      "locked_version": "0.4.0",
-      "git": "git://github.com/edelight/chef-solo-search.git",
-      "ref": "1f79c1d86e85aa3a2b01e15f90755cf60eb66a4f"
-    },
-    "minitest-handler": {
-      "locked_version": "0.2.1"
-    },
-    "chef_handler": {
-      "locked_version": "1.1.4"
-    }
-  }
-}
+DEPENDENCIES
+  backup
+    path: .
+    metadata: true
+  backup-test
+    path: test/integration/cookbooks/backup-test
+  chef-solo-search
+    git: git://github.com/edelight/chef-solo-search.git
+    revision: 848fad1461c78fd502975f1df2e14eed12610635
+  minitest-handler (~> 0.2.1)
+
+GRAPH
+  backup (1.0.4)
+  backup-test (0.0.0)
+    backup (>= 0.0.0)
+  chef-solo-search (0.5.1)
+  chef_handler (1.1.6)
+  minitest-handler (0.2.1)
+    chef_handler (>= 0.0.0)
