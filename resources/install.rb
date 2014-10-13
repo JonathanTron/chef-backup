@@ -1,5 +1,5 @@
 actions :install, :remove
 default_action :install
 
-attribute :url, kind_of: String, default: "https://github.com/JonathanTron/omnibus-backup/releases/download/3.10.0/omnibus-backup_3.10.0.20140610122512-1_amd64.deb"
-attribute :checksum, kind_of: String, default: "57db8aac2200b5ba01f92d5d93bbc211c5f898538cb026f7430bca8c97710b68"
+attribute :url, kind_of: String, default: "https://github.com/JonathanTron/omnibus-backup/releases/download/3.11.0/omnibus-backup_3.11.0-1_amd64.deb"
+attribute :checksum, kind_of: String, default: "679799db3ae06ceba2229ad12b966b3a7e68e5c78b8fe244fc17eaca3cf476e5"
