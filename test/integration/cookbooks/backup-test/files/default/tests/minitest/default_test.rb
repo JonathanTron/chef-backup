@@ -26,11 +26,11 @@ describe 'backup::default' do
     end
 
     it "contains gpg utilities config" do
-      config.must_include 'gpg = "/opt/omnibus-backup/embedded/bin/gpg2"'
+      config.must_include 'gpg "/opt/omnibus-backup/embedded/bin/gpg2"'
     end
 
     it "contains openssl utilities config" do
-      config.must_include 'openssl = "/opt/omnibus-backup/embedded/bin/openssl"'
+      config.must_include 'openssl "/opt/omnibus-backup/embedded/bin/openssl"'
     end
 
   end
