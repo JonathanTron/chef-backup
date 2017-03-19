@@ -27,8 +27,8 @@ Actions:
 
 Attributes parameters:
 
-* `url` - String - specify URL of omnibus-backup package to install - default to `https://github.com/JonathanTron/omnibus-backup/releases/download/3.7.0/omnibus-backup_3.7.0.20130725212503-1.ubuntu.12.04_amd64.deb`
-* `checksum` - String - SHA256 checksum for omnibus-backup package - default to `17b092ed7b126c4db2cc47b30091aaa3b503c25481c5b1e5b22f26e7a851c497`
+* `url` - String - specify URL of omnibus-backup package to install - default to `https://github.com/JonathanTron/omnibus-backup/releases/download/4.4.0/omnibus-backup_4.4.0-1.amd64.deb`
+* `checksum` - String - SHA256 checksum for omnibus-backup package - default to `3334aae0d1926244d1ef01155fd6dcfcbc0ffb68444d1a3761bb7341d7907eec`
 
 #### backup_config
 
